@@ -16,7 +16,7 @@ Before you begin, ensure you have the following installed on your system:
 
 - Python 3.8+
 - Redis
-- MySQL (or another supported database)
+- MySQL 
 
 ## Installation
 
