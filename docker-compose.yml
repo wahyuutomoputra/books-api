@@ -1,28 +1,31 @@
 version: '3.8'
 
 services:
-  web:
+  app:
     build: .
+    container_name: python_app
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=mysql://user:password@mysql:3306/mydatabase
-      - REDIS_URL=redis://redis:6379
+      DATABASE_URL: "mysql://root:example@mysql:3306/bookstore"
+      REDIS_URL: "redis://redis:6379"
+      PAGINATION_LIMIT: 10
     depends_on:
       - mysql
       - redis
 
   mysql:
-    image: mysql:5.7
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: mydatabase
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: bookstore
     ports:
       - "3306:3306"
 
   redis:
-    image: redis:latest
+    image: redis:6.2
+    container_name: redis_cache
     ports:
       - "6379:6379"

@@ -17,6 +17,7 @@ Before you begin, ensure you have the following installed on your system:
 - Python 3.8+
 - Redis
 - MySQL 
+- Docker & Docker Compose (for containerized deployment)
 
 ## Installation
 
@@ -76,11 +77,17 @@ Before you begin, ensure you have the following installed on your system:
 
 ## Running the Application
 
-1. **Start the FastAPI server:**
+### Using Docker
+
+To run the application using Docker and Docker Compose, follow these steps:
+
+1. **Build and run the Docker containers:**
 
     ```bash
-    uvicorn app.main:app --reload
+    docker-compose up --build
     ```
+
+    This command will build the Docker images and start the containers for the FastAPI app, MySQL, and Redis. Ensure the ports are available (e.g., 3306 for MySQL, 6379 for Redis, and 8000 for the FastAPI app).
 
 2. **Access the API:**
 
@@ -94,6 +101,19 @@ Before you begin, ensure you have the following installed on your system:
     ```bash
     redis-cli
     ```
+
+### Without Docker
+
+1. **Start the FastAPI server:**
+
+    ```bash
+    uvicorn app.main:app --reload
+    ```
+
+2. **Access the API:**
+
+    - **Swagger UI:** [http://localhost:8000/docs](http://localhost:8000/docs)
+    - **ReDoc:** [http://localhost:8000/redoc](http://localhost:8000/redoc)
 
 ## API Endpoints
 
