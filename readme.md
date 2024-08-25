@@ -61,7 +61,7 @@ Before you begin, ensure you have the following installed on your system:
       For testing purposes, you'll need a separate test database. Update the test database configuration in `tests/conftest.py`:
 
       ```python
-      SQLALCHEMY_DATABASE_URL_WITHOUT_DB = "mysql+pymysql://user:password@localhost"
+      SQLALCHEMY_DATABASE_URL_WITHOUT_DB = "mysql://user:password@localhost"
       DATABASE_NAME = "test_db"
       SQLALCHEMY_DATABASE_URL = f"{SQLALCHEMY_DATABASE_URL_WITHOUT_DB}/{DATABASE_NAME}"
       ```
