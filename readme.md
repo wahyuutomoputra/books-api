@@ -36,7 +36,7 @@ Before you begin, ensure you have the following installed on your system:
     # For Linux
     source env/bin/activate
 
-    # For Windows
+    # For Windows CMD
     .\env\Scripts\activate.bat
     ```
 
@@ -77,31 +77,6 @@ Before you begin, ensure you have the following installed on your system:
 
 ## Running the Application
 
-### Using Docker
-
-To run the application using Docker and Docker Compose, follow these steps:
-
-1. **Build and run the Docker containers:**
-
-    ```bash
-    docker-compose up --build
-    ```
-
-    This command will build the Docker images and start the containers for the FastAPI app, MySQL, and Redis. Ensure the ports are available (e.g., 3306 for MySQL, 6379 for Redis, and 8000 for the FastAPI app).
-
-2. **Access the API:**
-
-    - **Swagger UI:** [http://localhost:8000/docs](http://localhost:8000/docs)
-    - **ReDoc:** [http://localhost:8000/redoc](http://localhost:8000/redoc)
-
-3. **Access the Redis server (optional):**
-
-    You can access your Redis server via the command line:
-
-    ```bash
-    redis-cli
-    ```
-
 ### Without Docker
 
 1. **Start the FastAPI server:**
@@ -114,6 +89,29 @@ To run the application using Docker and Docker Compose, follow these steps:
 
     - **Swagger UI:** [http://localhost:8000/docs](http://localhost:8000/docs)
     - **ReDoc:** [http://localhost:8000/redoc](http://localhost:8000/redoc)
+
+### Using Docker
+
+1. **Build and run the Docker containers:**
+
+    ```bash
+    docker-compose up --build
+    ```
+
+    This command will build the Docker images and start the containers for the FastAPI app, MySQL, and Redis. Make sure the ports are available (e.g., 3306 for MySQL, 6379 for Redis, and 8000 for the FastAPI app).
+
+2. **Access the API:**
+
+    - **Swagger UI:** [http://localhost:8000/docs](http://localhost:8000/docs)
+    - **ReDoc:** [http://localhost:8000/redoc](http://localhost:8000/redoc)
+
+3. **Stop the Docker containers:**
+
+    To stop the containers, run:
+
+    ```bash
+    docker-compose down
+    ```
 
 ## API Endpoints
 
@@ -155,30 +153,6 @@ To run tests using `pytest`, follow these steps:
     ```
 
     The tests will run, and you'll see the results in your terminal.
-
-## Deployment
-
-To deploy the application, you can use any ASGI server such as `uvicorn` or `gunicorn`. You can also deploy it using Docker or any cloud service like AWS, GCP, or Azure.
-
-## Docker Deployment
-
-If you prefer to run the application using Docker:
-
-1. **Build the Docker image:**
-
-    ```bash
-    docker build -t book-author-api .
-    ```
-
-2. **Run the Docker container:**
-
-    ```bash
-    docker run -d -p 8000:8000 book-author-api
-    ```
-
-3. **Access the application:**
-
-    The application will be available at `http://localhost:8000`.
 
 ## Contributing
 
