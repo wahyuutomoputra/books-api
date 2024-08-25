@@ -1,0 +1,82 @@
+# Python bytecode
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Editor-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swo
+
+# Dependency directories
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Distribution / packaging
+*.egg
+*.egg-info
+dist/
+build/
+*.egg-info/
+*.pyc
+
+# Environment variables
+.env
+*.env
+
+# Redis
+*.rdb
+*.aof
+
+# Pytest
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# TypeScript
+*.tsbuildinfo
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# SQLAlchemy migrations
+migrations/
+
+# FastAPI
+*.log
+
+# PyCharm
+*.pyc
+.idea/
+
+# Log files
+*.log
+
+# Project-specific
+project_db/
