@@ -23,7 +23,7 @@ Before you begin, ensure you have the following installed on your system:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/yourrepository.git
+    git clone https://github.com/wahyuutomoputra/books-api
     cd yourrepository
     ```
 
